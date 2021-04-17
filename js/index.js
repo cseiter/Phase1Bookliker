@@ -16,7 +16,7 @@ function getBooks() {
 	.then (resp => resp.json())
 	}
 
-getBooks().then(console.log);
+//getBooks().then(console.log);
 
 function createBookLI(bookObject) {
 	const liElement = document.createElement('li');
@@ -32,5 +32,4 @@ function showBooks(booksArray) {
 		});
 	};
 
-getBooks()
-	.then(booksArray => showBooks(booksArray));
+getBooks().then(showBooks);
