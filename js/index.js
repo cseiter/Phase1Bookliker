@@ -108,15 +108,17 @@ function createBookLI(bookObject) {
 	return liElement;
 	}
 
-const bookLI = createBookLI(testBook);
+//const bookLI = createBookLI(testBook);
 //console.log(bookLI);
 
 function showBookLI(testBookArray) {
-	const bookObject = testBookArray[0];
+	//const bookObject = testBookArray[0];
 	const LIContainer = document.getElementById('list');
-	const bookLI = createBookLI(bookObject);
-	LIContainer.appendChild(bookLI);
-	}
+	testBookArray.forEach(bookObject => {
+		const bookLI = createBookLI(bookObject);
+		LIContainer.appendChild(bookLI);
+		});
+	};
 
 showBookLI(testBookArray);
 
