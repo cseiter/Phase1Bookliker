@@ -95,12 +95,12 @@ const testBook = {
 	}
 ]
 
-function fetchBooks() {
+function getBooks() {
 	return fetch('http://localhost:3000/books')
 	.then (resp => resp.json())
 	}
 
-fetchBooks().then(console.log);
+getBooks().then(console.log);
 
 function createBookLI(bookObject) {
 	const liElement = document.createElement('li');
@@ -111,15 +111,16 @@ function createBookLI(bookObject) {
 //const bookLI = createBookLI(testBook);
 //console.log(bookLI);
 
-function showBookLI(testBookArray) {
+function showBooks(booksArray) {
 	//const bookObject = testBookArray[0];
 	const LIContainer = document.getElementById('list');
-	testBookArray.forEach(bookObject => {
+	booksArray.forEach(bookObject => {
 		const bookLI = createBookLI(bookObject);
 		LIContainer.appendChild(bookLI);
 		});
 	};
 
-showBookLI(testBookArray);
+//showBookLI(testBookArray);
 
-
+getBooks()
+	.then(booksArray => showBooks(booksArray));
