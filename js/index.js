@@ -10,3 +10,10 @@
 //BONUS. unlike a book by clicking same button
 //search current like array for your user, if found, change button to unlike
 //PATCH request removes your user and updates
+
+function fetchBooks() {
+	return fetch('http://localhost:3000/books')
+	.then (resp => resp.json())
+	}
+
+fetchBooks().then(console.log);
