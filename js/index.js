@@ -18,9 +18,29 @@ function fetchBooks() {
 
 fetchBooks().then(console.log);
 
-function createBookLI() {
-	const li = document.createElement('li');
-	console.log(li);
+function createBookLI(bookObject) {
+	const liElement = document.createElement('li');
+	liElement.textContent = bookObject.title;
+	console.log(liElement);
 	}
 
-createBookLI();
+const testBook = {
+    "id": 1,
+    "title": "Grapefruit",
+    "subtitle": "A book of Instruction and Drawings.",
+    "description": "Back in print for the first time in nearly thirty years, here is Yoko Ono's whimsical, delightful, subversive, startling book of instructions for art and for life. 'Burn this book after you've read it.' -- Yoko 'A dream you dream alone may be a dream, but a dream two people dream together is a reality. This is the greatest book I've ever burned.' -- John",
+    "author": "Yoko Ono",
+    "img_url": "https://books.google.com/books/content?id=3S8Rwr-iBdoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "users": [
+      {
+        "id": 2,
+        "username": "auer"
+      },
+      {
+        "id": 8,
+        "username": "maverick"
+      }
+    ]
+  }
+
+createBookLI(testBook);
