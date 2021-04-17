@@ -1,6 +1,6 @@
 //1. Get a list of books and render them from http://localhost:3000/books
 //fetch function returns promise
-//append parent UL with LI element of each book title returned
+//append parent UL, id=list with LI element of each book title returned
 //2. Be able to click on a book and see the thumbnail, description, and a list of users who liked
 //use event handlers to turn LI into clickable item (hover color to show actionable?)
 //show thumbnail, title, subtitle, author, description, and UL of users who liked
@@ -17,3 +17,10 @@ function fetchBooks() {
 	}
 
 fetchBooks().then(console.log);
+
+function createBookLI() {
+	const li = document.createElement('li');
+	console.log(li);
+	}
+
+createBookLI();
