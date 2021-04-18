@@ -16,15 +16,14 @@ function getBooks() {
 	.then (resp => resp.json())
 	}
 
-//getBooks().then(console.log);
-
 function createBookLI(bookObject) {
 	const liElement = document.createElement('li');
 	liElement.textContent = bookObject.title;
+	liElement.addEventListener("click",showBookDetails)
 	return liElement;
 	}
 
-function showBooks(booksArray) {
+function showBooksList(booksArray) {
 	const LIContainer = document.getElementById('list');
 	booksArray.forEach(bookObject => {
 		const bookLI = createBookLI(bookObject);
@@ -32,4 +31,8 @@ function showBooks(booksArray) {
 		});
 	};
 
-getBooks().then(showBooks);
+function showBookDetails() {
+	alert("List item clicked!");
+	}
+
+getBooks().then(showBooksList);
