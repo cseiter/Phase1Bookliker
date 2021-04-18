@@ -32,7 +32,7 @@ function showBooksList(booksArray) {
 	};
 
 function showBookDetails() {
-	alert("List item clicked!");
+	alert(event.target.innerText);
 	}
 
 getBooks().then(showBooksList);
